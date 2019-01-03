@@ -6,8 +6,8 @@
     gradient-color1="#000972"
     gradient-color2="black" />
 
-    <text x="50%" y="50%+10"
+    <text x="50%" y="50%+10" id="clock" text-length="6"
         font-family="Seville-Bold-Condensed" fill="#0099ff"
         font-size="40" font-weight="bold"
-        text-anchor="middle">5:56</text>
+        text-anchor="middle"></text>
 </svg>
