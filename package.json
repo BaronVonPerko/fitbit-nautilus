@@ -1,0 +1,28 @@
+{
+  "name": "fitbit-nautilus",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~3.0.0",
+    "@fitbit/sdk-cli": "^1.5.0"
+  },
+  "fitbit": {
+    "appUUID": "04cdff84-4859-420d-a717-d3082a8e8329",
+    "appType": "clockface",
+    "appDisplayName": "Nautilus",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}
