@@ -1,37 +1,70 @@
 import clock from "clock";
 import document from "document";
 import { preferences } from "user-settings";
-import { goals, today } from "user-activity";
+import { stats } from "app/stats";
+import Stats from "./stats";
 
 let elementIds = [
   "clock",
   "topLeftText",
   "topLeftArc",
+  "topLeftArcBG",
   "topRightText",
   "topRightArc",
+  "topRightArcBG",
   "bottomRightText",
   "bottomRightArc",
+  "bottomRightArcBG",
   "bottomLeftText",
-  "bottomLeftArc"
+  "bottomLeftArc",
+  "bottomLeftArcBG"
 ];
 let elements = {};
+
+let settings = {
+  topLeft: "getSteps",
+  topRight: null,
+  bottomLeft: null,
+  bottomRight: null
+};
 
 elementIds.forEach(element => {
   elements[element] = document.getElementById(element);
 });
 
-clock.granularity = "minutes";
-clock.ontick = evt => {
-  let hours = evt.date.getHours();
-  if (preferences.clockDisplay === "12h") {
-    hours > 12 ? (hours -= 12) : hours;
-  }
+let stats = new Stats();
 
-  hours = ("0" + hours).slice(-2);
-  let minutes = ("0" + evt.date.getMinutes()).slice(-2);
+function setupStats() {
+  Object.keys(settings).forEach(key => {
+    if (!settings[key]) {
+      elements[`${key}ArcBG`].style.opacity = 0;
+      elements[`${key}Arc`].style.opacity = 0;
+    } else {
+      elements[`${key}ArcBG`].style.opacity = 1;
+      elements[`${key}Arc`].style.opacity = 1;
 
-  elements.clock.text = `${hours}:${minutes}`;
-};
+      let values = stats[settings[key]]();
 
-elements.topLeftText.text = today.local.steps;
-elements.topLeftArc.sweepAngle = (today.local.steps / goals.steps) * 360;
+      elements[`${key}Text`].text = values.text;
+      elements[`${key}Arc`].sweepAngle = values.sweepAngle;
+    }
+  });
+}
+
+function setupClock() {
+  clock.granularity = "minutes";
+  clock.ontick = evt => {
+    let hours = evt.date.getHours();
+    if (preferences.clockDisplay === "12h") {
+      hours > 12 ? (hours -= 12) : hours;
+    }
+
+    hours = ("0" + hours).slice(-2);
+    let minutes = ("0" + evt.date.getMinutes()).slice(-2);
+
+    elements.clock.text = `${hours}:${minutes}`;
+  };
+}
+
+setupClock();
+setupStats();
