@@ -24,7 +24,7 @@ let elements = {};
 let settings = {
   topLeft: "getSteps",
   topRight: "getHeartRate",
-  bottomLeft: "getHeartRate",
+  bottomLeft: "getFloors",
   bottomRight: "getHeartRate"
 };
 

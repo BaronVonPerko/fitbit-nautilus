@@ -31,4 +31,11 @@ export default class Stats {
         sweepAngle: (this.heartRate / 180) * 360
       };
   }
+
+  getFloors() {
+    return {
+      text: today.local.elevationGain,
+      sweepAngle: (today.local.elevationGain / goals.elevationGain) * 360
+    };
+  }
 }
