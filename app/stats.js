@@ -1,6 +1,7 @@
 import { goals, today } from "user-activity";
 import { HeartRateSensor } from "heart-rate";
 import { me } from "appbit";
+import { battery } from "power";
 
 export default class Stats {
   constructor() {
@@ -57,6 +58,13 @@ export default class Stats {
     return {
       text: today.local.distance,
       sweepAngle: (today.local.distance / goals.distance) * 360
+    };
+  }
+
+  getPower() {
+    return {
+      text: Math.floor(battery.chargeLevel) + "%",
+      sweepAngle: (Math.floor(battery.chargeLevel) / 100) * 360
     };
   }
 }

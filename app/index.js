@@ -24,7 +24,7 @@ let elements = {};
 let settings = {
   topLeft: "getSteps",
   topRight: "getCalories",
-  bottomLeft: "getDistance",
+  bottomLeft: "getPower",
   bottomRight: "getActiveMinutes"
 };
 
