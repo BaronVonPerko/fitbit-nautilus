@@ -1,10 +1,23 @@
 import clock from "clock";
 import document from "document";
+import { preferences } from "user-settings";
+
+let elementIds = ["clock"];
+let elements = {};
+
+elementIds.forEach(element => {
+  elements[element] = document.getElementById(element);
+});
 
 clock.granularity = "minutes";
 clock.ontick = evt => {
   let hours = evt.date.getHours();
-  let minutes = evt.date.getMinutes();
+  if (preferences.clockDisplay === "12h") {
+    hours > 12 ? (hours -= 12) : hours;
+  }
 
-  document.getElementById("clock").text = `${hours}:${minutes}`;
+  hours = ("0" + hours).slice(-2);
+  let minutes = ("0" + evt.date.getMinutes()).slice(-2);
+
+  elements.clock.text = `${hours}:${minutes}`;
 };
