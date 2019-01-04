@@ -19,7 +19,7 @@
     id="clock"
     text-length="6"
     fill="#0099ff"
-    font-size="40"
+    font-size="46"
     text-anchor="middle"
   ></text>
 
