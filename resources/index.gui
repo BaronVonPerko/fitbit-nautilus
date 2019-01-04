@@ -27,19 +27,119 @@
     x="14%+1"
     y="62"
     id="topLeftText"
+    class="statText"
     text-length="5"
     fill="#0099ff"
-    font-size="20"
     text-anchor="middle"
   ></text>
 
   <arc
     id="topLeftArcBG"
-    class="topLeftArc"
+    x="2%"
+    y="20"
+    class="statArc"
     fill="#0040bb"
     start-angle="0"
     sweep-angle="360"
   />
 
-  <arc id="topLeftArc" class="topLeftArc" fill="#0099ff" start-angle="0" />
+  <arc
+    id="topLeftArc"
+    class="statArc"
+    x="2%"
+    y="20"
+    fill="#0099ff"
+    start-angle="0"
+    sweep-angle="0"
+  />
+
+  <text
+    x="86%-1"
+    y="62"
+    id="topRightText"
+    class="statText"
+    text-length="5"
+    fill="#0099ff"
+    text-anchor="middle"
+  ></text>
+
+  <arc
+    id="topRightArcBG"
+    x="98%-75"
+    y="20"
+    class="statArc"
+    fill="#0040bb"
+    start-angle="0"
+    sweep-angle="360"
+  />
+
+  <arc
+    id="topRightArc"
+    class="statArc"
+    x="2%"
+    y="20"
+    fill="#0099ff"
+    start-angle="0"
+    sweep-angle="0"
+  />
+
+  <text
+    x="86%-1"
+    y="100%-54"
+    id="bottomRightText"
+    class="statText"
+    text-length="5"
+    fill="#0099ff"
+    text-anchor="middle"
+  ></text>
+
+  <arc
+    id="bottomRightArcBG"
+    x="98%-75"
+    y="100%-20-75"
+    class="statArc"
+    fill="#0040bb"
+    start-angle="0"
+    sweep-angle="360"
+  />
+
+  <arc
+    id="bottomRightArc"
+    class="statArc"
+    x="98%-75"
+    y="100%-20-75"
+    fill="#0099ff"
+    start-angle="0"
+    sweep-angle="0"
+  />
+
+  <text
+    x="14%+1"
+    y="100%-54"
+    id="bottomLeftText"
+    class="statText"
+    text-length="5"
+    fill="#0099ff"
+    text-anchor="middle"
+  ></text>
+
+  <arc
+    id="bottomLeftArcBG"
+    x="2%"
+    y="100%-20-75"
+    class="statArc"
+    fill="#0040bb"
+    start-angle="0"
+    sweep-angle="360"
+  />
+
+  <arc
+    id="bottomLeftArc"
+    class="statArc"
+    x="2%"
+    y="100%-20-75"
+    fill="#0099ff"
+    start-angle="0"
+    sweep-angle="0"
+  />
 </svg>

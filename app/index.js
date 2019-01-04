@@ -3,7 +3,17 @@ import document from "document";
 import { preferences } from "user-settings";
 import { goals, today } from "user-activity";
 
-let elementIds = ["clock", "topLeftText", "topLeftArc"];
+let elementIds = [
+  "clock",
+  "topLeftText",
+  "topLeftArc",
+  "topRightText",
+  "topRightArc",
+  "bottomRightText",
+  "bottomRightArc",
+  "bottomLeftText",
+  "bottomLeftArc"
+];
 let elements = {};
 
 elementIds.forEach(element => {
