@@ -76,7 +76,7 @@
   <arc
     id="topRightArc"
     class="statArc"
-    x="2%"
+    x="98%-75"
     y="20"
     fill="#0099ff"
     start-angle="0"

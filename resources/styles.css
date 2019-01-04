@@ -6,6 +6,7 @@
   width: 75;
   height: 75;
   arc-width: 6;
+  opacity: 0;
 }
 
 .statText {

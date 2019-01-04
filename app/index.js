@@ -23,9 +23,9 @@ let elements = {};
 
 let settings = {
   topLeft: "getSteps",
-  topRight: null,
-  bottomLeft: null,
-  bottomRight: null
+  topRight: "getHeartRate",
+  bottomLeft: "getHeartRate",
+  bottomRight: "getHeartRate"
 };
 
 elementIds.forEach(element => {
@@ -35,20 +35,22 @@ elementIds.forEach(element => {
 let stats = new Stats();
 
 function setupStats() {
-  Object.keys(settings).forEach(key => {
-    if (!settings[key]) {
-      elements[`${key}ArcBG`].style.opacity = 0;
-      elements[`${key}Arc`].style.opacity = 0;
-    } else {
-      elements[`${key}ArcBG`].style.opacity = 1;
-      elements[`${key}Arc`].style.opacity = 1;
+  setInterval(() => {
+    Object.keys(settings).forEach(key => {
+      if (!settings[key]) {
+        elements[`${key}ArcBG`].style.opacity = 0;
+        elements[`${key}Arc`].style.opacity = 0;
+      } else {
+        elements[`${key}ArcBG`].style.opacity = 1;
+        elements[`${key}Arc`].style.opacity = 1;
 
-      let values = stats[settings[key]]();
+        let values = stats[settings[key]]();
 
-      elements[`${key}Text`].text = values.text;
-      elements[`${key}Arc`].sweepAngle = values.sweepAngle;
-    }
-  });
+        elements[`${key}Text`].text = values.text;
+        elements[`${key}Arc`].sweepAngle = values.sweepAngle;
+      }
+    });
+  }, 1000);
 }
 
 function setupClock() {
