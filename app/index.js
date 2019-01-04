@@ -1,8 +1,9 @@
 import clock from "clock";
 import document from "document";
 import { preferences } from "user-settings";
+import { goals, today } from "user-activity";
 
-let elementIds = ["clock"];
+let elementIds = ["clock", "topLeftText", "topLeftArc"];
 let elements = {};
 
 elementIds.forEach(element => {
@@ -21,3 +22,6 @@ clock.ontick = evt => {
 
   elements.clock.text = `${hours}:${minutes}`;
 };
+
+elements.topLeftText.text = today.local.steps;
+elements.topLeftArc.sweepAngle = (today.local.steps / goals.steps) * 360;
