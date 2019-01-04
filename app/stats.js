@@ -45,4 +45,18 @@ export default class Stats {
       sweepAngle: (today.local.activeMinutes / goals.activeMinutes) * 360
     };
   }
+
+  getCalories() {
+    return {
+      text: today.local.calories,
+      sweepAngle: (today.local.calories / goals.calories) * 360
+    };
+  }
+
+  getDistance() {
+    return {
+      text: today.local.distance,
+      sweepAngle: (today.local.distance / goals.distance) * 360
+    };
+  }
 }

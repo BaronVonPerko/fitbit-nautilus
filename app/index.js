@@ -23,8 +23,8 @@ let elements = {};
 
 let settings = {
   topLeft: "getSteps",
-  topRight: "getHeartRate",
-  bottomLeft: "getFloors",
+  topRight: "getCalories",
+  bottomLeft: "getDistance",
   bottomRight: "getActiveMinutes"
 };
 
