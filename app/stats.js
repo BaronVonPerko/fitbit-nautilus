@@ -38,4 +38,11 @@ export default class Stats {
       sweepAngle: (today.local.elevationGain / goals.elevationGain) * 360
     };
   }
+
+  getActiveMinutes() {
+    return {
+      text: today.local.activeMinutes,
+      sweepAngle: (today.local.activeMinutes / goals.activeMinutes) * 360
+    };
+  }
 }

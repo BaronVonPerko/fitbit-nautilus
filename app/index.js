@@ -25,7 +25,7 @@ let settings = {
   topLeft: "getSteps",
   topRight: "getHeartRate",
   bottomLeft: "getFloors",
-  bottomRight: "getHeartRate"
+  bottomRight: "getActiveMinutes"
 };
 
 elementIds.forEach(element => {
