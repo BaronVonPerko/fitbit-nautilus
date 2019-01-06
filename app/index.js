@@ -23,9 +23,9 @@ let elements = {};
 
 let settings = {
   topLeft: "getSteps",
-  topRight: "getCalories",
-  bottomLeft: "getPower",
-  bottomRight: "getActiveMinutes"
+  topRight: "getPower",
+  bottomLeft: "getCalories",
+  bottomRight: "getFloors"
 };
 
 elementIds.forEach(element => {
@@ -40,9 +40,11 @@ function setupStats() {
       if (!settings[key]) {
         elements[`${key}ArcBG`].style.opacity = 0;
         elements[`${key}Arc`].style.opacity = 0;
+        elements[`${key}Text`].style.opacity = 0;
       } else {
-        elements[`${key}ArcBG`].style.opacity = 1;
-        elements[`${key}Arc`].style.opacity = 1;
+        elements[`${key}ArcBG`].style.opacity = 0.6;
+        elements[`${key}Arc`].style.opacity = 0.6;
+        elements[`${key}Text`].style.opacity = 0.6;
 
         let values = stats[settings[key]]();
 
