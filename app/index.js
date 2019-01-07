@@ -3,6 +3,7 @@ import document from "document";
 import { preferences } from "user-settings";
 import { stats } from "app/stats";
 import Stats from "./stats";
+import { themes } from "./themes";
 
 let elementIds = [
   "bg",
@@ -22,18 +23,6 @@ let elementIds = [
 ];
 let elements = {};
 
-let themes = {
-  blue: {
-    main: "#0099ff",
-    secondary: "#0040bb",
-    gradient: "#000972"
-  },
-  red: {
-    main: "#ff1a1a",
-    secondary: "#cc1a1a",
-    gradient: "#661a1a"
-  }
-};
 let currentTheme = "blue";
 
 let settings = {
