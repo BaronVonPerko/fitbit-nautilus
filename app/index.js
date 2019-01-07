@@ -5,6 +5,7 @@ import { stats } from "app/stats";
 import Stats from "./stats";
 
 let elementIds = [
+  "bg",
   "clock",
   "topLeftText",
   "topLeftArc",
@@ -21,6 +22,15 @@ let elementIds = [
 ];
 let elements = {};
 
+let themes = {
+  blue: {
+    main: "#0099ff",
+    secondary: "#0040bb",
+    gradient: "#000972"
+  }
+};
+let currentTheme = "blue";
+
 let settings = {
   topLeft: "getSteps",
   topRight: "getPower",
@@ -31,6 +41,23 @@ let settings = {
 elementIds.forEach(element => {
   elements[element] = document.getElementById(element);
 });
+
+function setupColors() {
+  elements.clock.style.fill = themes[currentTheme].main;
+  elements.topLeftText.style.fill = themes[currentTheme].main;
+  elements.topLeftArc.style.fill = themes[currentTheme].main;
+  elements.topLeftArcBG.style.fill = themes[currentTheme].secondary;
+  elements.topRightText.style.fill = themes[currentTheme].main;
+  elements.topRightArc.style.fill = themes[currentTheme].main;
+  elements.topRightArcBG.style.fill = themes[currentTheme].secondary;
+  elements.bottomRightText.style.fill = themes[currentTheme].main;
+  elements.bottomRightArc.style.fill = themes[currentTheme].main;
+  elements.bottomRightArcBG.style.fill = themes[currentTheme].secondary;
+  elements.bottomLeftText.style.fill = themes[currentTheme].main;
+  elements.bottomLeftArc.style.fill = themes[currentTheme].main;
+  elements.bottomLeftArcBG.style.fill = themes[currentTheme].secondary;
+  elements.bg.gradient.colors.c1 = themes[currentTheme].gradient;
+}
 
 let stats = new Stats();
 
@@ -72,3 +99,4 @@ function setupClock() {
 
 setupClock();
 setupStats();
+setupColors();

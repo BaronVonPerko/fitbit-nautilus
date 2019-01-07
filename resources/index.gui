@@ -2,6 +2,7 @@
   <gradientRect
     x="0"
     y="0"
+    id="bg"
     width="100%"
     height="100%"
     gradient-type="radial"
@@ -9,7 +10,6 @@
     gradient-y1="50%"
     gradient-x2="50%+150"
     gradient-y2="50%+150"
-    gradient-color1="#000972"
     gradient-color2="black"
   />
 
@@ -18,7 +18,6 @@
     y="50%+10"
     id="clock"
     text-length="6"
-    fill="#0099ff"
     font-size="46"
     text-anchor="middle"
   ></text>
@@ -29,7 +28,6 @@
     id="topLeftText"
     class="statText"
     text-length="5"
-    fill="#0099ff"
     text-anchor="middle"
   ></text>
 
@@ -38,7 +36,6 @@
     x="2%"
     y="20"
     class="statArc"
-    fill="#0040bb"
     start-angle="0"
     sweep-angle="360"
   />
@@ -48,7 +45,6 @@
     class="statArc"
     x="2%"
     y="20"
-    fill="#0099ff"
     start-angle="0"
     sweep-angle="0"
   />
@@ -59,7 +55,6 @@
     id="topRightText"
     class="statText"
     text-length="5"
-    fill="#0099ff"
     text-anchor="middle"
   ></text>
 
@@ -68,7 +63,6 @@
     x="98%-75"
     y="20"
     class="statArc"
-    fill="#0040bb"
     start-angle="0"
     sweep-angle="360"
   />
@@ -78,7 +72,6 @@
     class="statArc"
     x="98%-75"
     y="20"
-    fill="#0099ff"
     start-angle="0"
     sweep-angle="0"
   />
@@ -89,7 +82,6 @@
     id="bottomRightText"
     class="statText"
     text-length="5"
-    fill="#0099ff"
     text-anchor="middle"
   ></text>
 
@@ -98,7 +90,6 @@
     x="98%-75"
     y="100%-20-75"
     class="statArc"
-    fill="#0040bb"
     start-angle="0"
     sweep-angle="360"
   />
@@ -108,7 +99,6 @@
     class="statArc"
     x="98%-75"
     y="100%-20-75"
-    fill="#0099ff"
     start-angle="0"
     sweep-angle="0"
   />
@@ -119,7 +109,6 @@
     id="bottomLeftText"
     class="statText"
     text-length="5"
-    fill="#0099ff"
     text-anchor="middle"
   ></text>
 
@@ -128,7 +117,6 @@
     x="2%"
     y="100%-20-75"
     class="statArc"
-    fill="#0040bb"
     start-angle="0"
     sweep-angle="360"
   />
@@ -138,7 +126,6 @@
     class="statArc"
     x="2%"
     y="100%-20-75"
-    fill="#0099ff"
     start-angle="0"
     sweep-angle="0"
   />
