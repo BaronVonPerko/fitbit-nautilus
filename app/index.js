@@ -56,24 +56,28 @@ function setupColors() {
 let stats = new Stats();
 
 function setupStats() {
-  setInterval(() => {
-    Object.keys(settings).forEach(key => {
-      if (!settings[key]) {
-        elements[`${key}ArcBG`].style.opacity = 0;
-        elements[`${key}Arc`].style.opacity = 0;
-        elements[`${key}Text`].style.opacity = 0;
-      } else {
-        elements[`${key}ArcBG`].style.opacity = 0.6;
-        elements[`${key}Arc`].style.opacity = 0.6;
-        elements[`${key}Text`].style.opacity = 0.6;
+  loadStats();
+  setInterval(loadStats, 1000);
+}
 
-        let values = stats[settings[key]]();
+function loadStats() {
+  Object.keys(settings).forEach(key => {
+    if (!settings[key]) {
+      elements[`${key}ArcBG`].style.opacity = 0;
+      elements[`${key}Arc`].style.opacity = 0;
+      elements[`${key}Text`].style.opacity = 0;
+    } else {
+      elements[`${key}ArcBG`].style.opacity = 0.6;
+      elements[`${key}Arc`].style.opacity = 0.6;
+      elements[`${key}Text`].style.opacity = 0.6;
 
-        elements[`${key}Text`].text = values.text;
-        elements[`${key}Arc`].sweepAngle = values.sweepAngle;
-      }
-    });
-  }, 1000);
+      let values = stats[settings[key]]();
+      if (values.sweepAngle > 360) values.sweepAngle = 360;
+
+      elements[`${key}Text`].text = values.text;
+      elements[`${key}Arc`].sweepAngle = values.sweepAngle;
+    }
+  });
 }
 
 function setupClock() {

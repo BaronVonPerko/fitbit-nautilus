@@ -1,7 +1,7 @@
 export const themes = {
   blue: {
     main: "#0099ff",
-    secondary: "#0040bb",
+    secondary: "#002088",
     gradient: "#000972"
   },
   red: {
