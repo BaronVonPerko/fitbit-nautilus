@@ -13,6 +13,7 @@ function mySettings(props) {
           selectViewTitle="Top Left Metric"
           settingsKey="topLeft"
           options={[
+            { name: "--None--", value: null },
             { name: "Steps", value: "getSteps" },
             { name: "Heart Rate", value: "getHeartRate" },
             { name: "Floors", value: "getFloors" },
@@ -27,6 +28,7 @@ function mySettings(props) {
           selectViewTitle="Top Right Metric"
           settingsKey="topRight"
           options={[
+            { name: "--None--", value: null },
             { name: "Steps", value: "getSteps" },
             { name: "Heart Rate", value: "getHeartRate" },
             { name: "Floors", value: "getFloors" },
@@ -41,6 +43,7 @@ function mySettings(props) {
           selectViewTitle="Bottom Left Metric"
           settingsKey="bottomLeft"
           options={[
+            { name: "--None--", value: null },
             { name: "Steps", value: "getSteps" },
             { name: "Heart Rate", value: "getHeartRate" },
             { name: "Floors", value: "getFloors" },
@@ -55,6 +58,7 @@ function mySettings(props) {
           selectViewTitle="Bottom Right Metric"
           settingsKey="bottomRight"
           options={[
+            { name: "--None--", value: null },
             { name: "Steps", value: "getSteps" },
             { name: "Heart Rate", value: "getHeartRate" },
             { name: "Floors", value: "getFloors" },
