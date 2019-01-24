@@ -1,9 +1,6 @@
 import { settingsStorage } from "settings";
 import * as messaging from "messaging";
 
-console.log(settingsStorage.key(0));
-console.log(settingsStorage.getItem("topLeft"));
-
 settingsStorage.onchange = event => console.log(event.newValue);
 
 // Settings have been changed
