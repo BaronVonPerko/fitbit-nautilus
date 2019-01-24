@@ -7,7 +7,17 @@ function mySettings(props) {
             Nautilus Settings
           </Text>
         }
-      />
+      >
+        <Select
+          label="Top Left"
+          selectViewTitle="Top Left Metric"
+          settingsKey="topLeft"
+          options={[
+            { name: "Steps", value: "getSteps" },
+            { name: "Heart Rate", value: "getHeartRate" }
+          ]}
+        />
+      </Section>
     </Page>
   );
 }

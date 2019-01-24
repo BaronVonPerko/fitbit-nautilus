@@ -4,6 +4,7 @@ import { preferences } from "user-settings";
 import { stats } from "app/stats";
 import Stats from "./stats";
 import { themes } from "./themes";
+import * as messaging from "messaging";
 
 let elementIds = [
   "bg",
@@ -59,6 +60,11 @@ function setupStats() {
   loadStats();
   setInterval(loadStats, 1000);
 }
+
+messaging.peerSocket.onmessage = function(evt) {
+  settings[evt.data.key] = evt.data.value;
+  loadStats();
+};
 
 function loadStats() {
   Object.keys(settings).forEach(key => {
