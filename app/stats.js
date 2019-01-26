@@ -31,7 +31,7 @@ export default class Stats {
       return {
         text: this.heartRate,
         sweepAngle: (this.heartRate / 180) * 360,
-        icon: null
+        icon: "heartrate.png"
       };
   }
 
@@ -39,7 +39,7 @@ export default class Stats {
     return {
       text: today.local.elevationGain,
       sweepAngle: (today.local.elevationGain / goals.elevationGain) * 360,
-      icon: null
+      icon: "floors.png"
     };
   }
 
@@ -47,7 +47,7 @@ export default class Stats {
     return {
       text: today.local.activeMinutes,
       sweepAngle: (today.local.activeMinutes / goals.activeMinutes) * 360,
-      icon: null
+      icon: "activeminutes.png"
     };
   }
 
@@ -55,7 +55,7 @@ export default class Stats {
     return {
       text: today.local.calories,
       sweepAngle: (today.local.calories / goals.calories) * 360,
-      icon: null
+      icon: "calories.png"
     };
   }
 
@@ -63,7 +63,7 @@ export default class Stats {
     return {
       text: today.local.distance,
       sweepAngle: (today.local.distance / goals.distance) * 360,
-      icon: null
+      icon: "distance.png"
     };
   }
 
@@ -71,7 +71,7 @@ export default class Stats {
     return {
       text: Math.floor(battery.chargeLevel) + "%",
       sweepAngle: (Math.floor(battery.chargeLevel) / 100) * 360,
-      icon: null
+      icon: "battery.png"
     };
   }
 }
