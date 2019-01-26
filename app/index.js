@@ -5,6 +5,9 @@ import { stats } from "app/stats";
 import Stats from "./stats";
 import { themes } from "./themes";
 import * as messaging from "messaging";
+import * as fs from "fs";
+
+const filename = "nautilus.txt";
 
 let elementIds = [
   "bg",
@@ -26,12 +29,26 @@ let elements = {};
 
 let currentTheme = "blue";
 
-let settings = {
-  topLeft: null,
-  topRight: null,
-  bottomLeft: null,
-  bottomRight: null
-};
+function getSettings() {
+  try {
+    return fs.readFileSync(filename, "json").settings;
+  } catch (e) {
+    console.log(e);
+    return {
+      topLeft: null,
+      topRight: null,
+      bottomLeft: null,
+      bottomRight: null
+    };
+  }
+}
+
+function saveSettings(settings) {
+  let data = { settings };
+  fs.writeFileSync(filename, data, "json");
+}
+
+let settings = getSettings();
 
 elementIds.forEach(element => {
   elements[element] = document.getElementById(element);
@@ -63,6 +80,7 @@ function setupStats() {
 
 messaging.peerSocket.onmessage = function(evt) {
   settings[evt.data.key] = evt.data.value;
+  saveSettings(settings);
   loadStats();
 };
 
