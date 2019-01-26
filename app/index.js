@@ -16,15 +16,19 @@ let elementIds = [
   "topLeftText",
   "topLeftArc",
   "topLeftArcBG",
+  "topLeftIcon",
   "topRightText",
   "topRightArc",
   "topRightArcBG",
+  "topRightIcon",
   "bottomRightText",
   "bottomRightArc",
   "bottomRightArcBG",
+  "bottomRightIcon",
   "bottomLeftText",
   "bottomLeftArc",
-  "bottomLeftArcBG"
+  "bottomLeftArcBG",
+  "bottomLeftIcon"
 ];
 let elements = {};
 
@@ -58,18 +62,27 @@ function setupColors() {
   const currentTheme = settings.theme.replace(/"/g, "");
 
   elements.clock.style.fill = themes[currentTheme].main;
+
   elements.topLeftText.style.fill = themes[currentTheme].main;
   elements.topLeftArc.style.fill = themes[currentTheme].main;
   elements.topLeftArcBG.style.fill = themes[currentTheme].secondary;
+  elements.topLeftIcon.style.fill = themes[currentTheme].main;
+
   elements.topRightText.style.fill = themes[currentTheme].main;
   elements.topRightArc.style.fill = themes[currentTheme].main;
   elements.topRightArcBG.style.fill = themes[currentTheme].secondary;
+  elements.topRightIcon.style.fill = themes[currentTheme].main;
+
   elements.bottomRightText.style.fill = themes[currentTheme].main;
   elements.bottomRightArc.style.fill = themes[currentTheme].main;
   elements.bottomRightArcBG.style.fill = themes[currentTheme].secondary;
+  elements.bottomRightIcon.style.fill = themes[currentTheme].main;
+
   elements.bottomLeftText.style.fill = themes[currentTheme].main;
   elements.bottomLeftArc.style.fill = themes[currentTheme].main;
   elements.bottomLeftArcBG.style.fill = themes[currentTheme].secondary;
+  elements.bottomLeftIcon.style.fill = themes[currentTheme].main;
+
   elements.bg.gradient.colors.c1 = themes[currentTheme].gradient;
 }
 
@@ -95,10 +108,12 @@ function loadStats() {
         elements[`${key}ArcBG`].style.opacity = 0;
         elements[`${key}Arc`].style.opacity = 0;
         elements[`${key}Text`].style.opacity = 0;
+        elements[`${key}Icon`].style.opacity = 0;
       } else {
         elements[`${key}ArcBG`].style.opacity = 0.6;
         elements[`${key}Arc`].style.opacity = 0.6;
         elements[`${key}Text`].style.opacity = 0.6;
+        elements[`${key}Icon`].style.opacity = 0.6;
 
         let values = stats[settings[key]]();
         if (values.sweepAngle > 360) values.sweepAngle = 360;
@@ -106,6 +121,10 @@ function loadStats() {
 
         elements[`${key}Text`].text = values.text;
         elements[`${key}Arc`].sweepAngle = values.sweepAngle;
+
+        if (values.icon) {
+          elements[`${key}Icon`].href = `icons/${values.icon}`;
+        }
       }
     });
 }

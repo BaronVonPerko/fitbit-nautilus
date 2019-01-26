@@ -40,6 +40,8 @@
     text-anchor="middle"
   ></text>
 
+  <image id="topLeftIcon" x="12%" y="68" width="16" height="16" />
+
   <arc
     id="topLeftArcBG"
     x="2%"
@@ -74,6 +76,8 @@
     text-length="5"
     text-anchor="middle"
   ></text>
+
+  <image id="topRightIcon" x="86% - 1" y="70" />
 
   <arc
     id="topRightArcBG"
@@ -110,6 +114,8 @@
     text-anchor="middle"
   ></text>
 
+  <image id="bottomRightIcon" x="86% - 1" y="100%-40" />
+
   <arc
     id="bottomRightArcBG"
     x="98%-75"
@@ -144,6 +150,8 @@
     text-length="5"
     text-anchor="middle"
   ></text>
+
+  <image id="bottomLeftIcon" x="14% + 1" y="100%-40" />
 
   <arc
     id="bottomLeftArcBG"

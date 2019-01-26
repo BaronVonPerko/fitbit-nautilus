@@ -20,7 +20,8 @@ export default class Stats {
   getSteps() {
     return {
       text: today.local.steps,
-      sweepAngle: (today.local.steps / goals.steps) * 360
+      sweepAngle: (today.local.steps / goals.steps) * 360,
+      icon: "steps.png"
     };
   }
 
@@ -29,42 +30,48 @@ export default class Stats {
     else
       return {
         text: this.heartRate,
-        sweepAngle: (this.heartRate / 180) * 360
+        sweepAngle: (this.heartRate / 180) * 360,
+        icon: null
       };
   }
 
   getFloors() {
     return {
       text: today.local.elevationGain,
-      sweepAngle: (today.local.elevationGain / goals.elevationGain) * 360
+      sweepAngle: (today.local.elevationGain / goals.elevationGain) * 360,
+      icon: null
     };
   }
 
   getActiveMinutes() {
     return {
       text: today.local.activeMinutes,
-      sweepAngle: (today.local.activeMinutes / goals.activeMinutes) * 360
+      sweepAngle: (today.local.activeMinutes / goals.activeMinutes) * 360,
+      icon: null
     };
   }
 
   getCalories() {
     return {
       text: today.local.calories,
-      sweepAngle: (today.local.calories / goals.calories) * 360
+      sweepAngle: (today.local.calories / goals.calories) * 360,
+      icon: null
     };
   }
 
   getDistance() {
     return {
       text: today.local.distance,
-      sweepAngle: (today.local.distance / goals.distance) * 360
+      sweepAngle: (today.local.distance / goals.distance) * 360,
+      icon: null
     };
   }
 
   getPower() {
     return {
       text: Math.floor(battery.chargeLevel) + "%",
-      sweepAngle: (Math.floor(battery.chargeLevel) / 100) * 360
+      sweepAngle: (Math.floor(battery.chargeLevel) / 100) * 360,
+      icon: null
     };
   }
 }
