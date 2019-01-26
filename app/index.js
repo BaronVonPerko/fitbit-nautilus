@@ -6,6 +6,7 @@ import Stats from "./stats";
 import { themes } from "./themes";
 import * as messaging from "messaging";
 import * as fs from "fs";
+import display from "display";
 
 const filename = "nautilus.txt";
 
@@ -97,6 +98,7 @@ function loadStats() {
 
       let values = stats[settings[key]]();
       if (values.sweepAngle > 360) values.sweepAngle = 360;
+      if (!values.sweepAngle) values.sweepAngle = 0;
 
       elements[`${key}Text`].text = values.text;
       elements[`${key}Arc`].sweepAngle = values.sweepAngle;
@@ -119,6 +121,20 @@ function setupClock() {
   };
 }
 
+function runAnimations() {
+  elements.topLeftArc.animate("enable");
+  elements.topRightArc.animate("enable");
+  elements.bottomLeftArc.animate("enable");
+  elements.bottomRightArc.animate("enable");
+}
+
+display.onchange = () => {
+  if (display.on) {
+    runAnimations();
+  }
+};
+
 setupClock();
 setupStats();
 setupColors();
+runAnimations();

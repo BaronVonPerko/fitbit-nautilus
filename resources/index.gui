@@ -47,7 +47,9 @@
     y="20"
     start-angle="0"
     sweep-angle="0"
-  />
+  >
+    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+  </arc>
 
   <text
     x="86%-1"
@@ -74,7 +76,9 @@
     y="20"
     start-angle="0"
     sweep-angle="0"
-  />
+  >
+    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+  </arc>
 
   <text
     x="86%-1"
@@ -101,7 +105,9 @@
     y="100%-20-75"
     start-angle="0"
     sweep-angle="0"
-  />
+  >
+    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+  </arc>
 
   <text
     x="14%+1"
@@ -128,5 +134,7 @@
     y="100%-20-75"
     start-angle="0"
     sweep-angle="0"
-  />
+  >
+    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+  </arc>
 </svg>
