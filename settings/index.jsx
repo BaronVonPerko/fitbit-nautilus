@@ -69,6 +69,11 @@ function mySettings(props) {
           ]}
         />
       </Section>
+      <Section>
+        <Link source="https://chrisperko.net/support-me">
+          Support The Developer
+        </Link>
+      </Section>
     </Page>
   );
 }
