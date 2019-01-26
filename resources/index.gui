@@ -11,7 +11,16 @@
     gradient-x2="50%+150"
     gradient-y2="50%+150"
     gradient-color2="black"
-  />
+  >
+    <animate
+      attributeName="opacity"
+      from="0"
+      to="1"
+      dur="2"
+      easing="ease-in-out"
+      begin="enable"
+    />
+  </gradientRect>
 
   <text
     x="50%"
@@ -48,7 +57,13 @@
     start-angle="0"
     sweep-angle="0"
   >
-    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+    <animate
+      attributeName="sweep-angle"
+      from="0"
+      dur="1"
+      begin="enable"
+      easing="ease-in-out"
+    />
   </arc>
 
   <text
@@ -77,7 +92,13 @@
     start-angle="0"
     sweep-angle="0"
   >
-    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+    <animate
+      attributeName="sweep-angle"
+      from="0"
+      dur="1"
+      begin="enable"
+      easing="ease-in-out"
+    />
   </arc>
 
   <text
@@ -106,7 +127,13 @@
     start-angle="0"
     sweep-angle="0"
   >
-    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+    <animate
+      attributeName="sweep-angle"
+      from="0"
+      dur="1"
+      begin="enable"
+      easing="ease-in-out"
+    />
   </arc>
 
   <text
@@ -135,6 +162,12 @@
     start-angle="0"
     sweep-angle="0"
   >
-    <animate attributeName="sweep-angle" from="0" dur="1" begin="enable" />
+    <animate
+      attributeName="sweep-angle"
+      from="0"
+      dur="1"
+      begin="enable"
+      easing="ease-in-out"
+    />
   </arc>
 </svg>

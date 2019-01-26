@@ -126,6 +126,7 @@ function runAnimations() {
   elements.topRightArc.animate("enable");
   elements.bottomLeftArc.animate("enable");
   elements.bottomRightArc.animate("enable");
+  elements.bg.animate("enable");
 }
 
 display.onchange = () => {
