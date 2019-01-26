@@ -7,7 +7,12 @@ settingsStorage.onchange = event => console.log(event.newValue);
 settingsStorage.onchange = evt => sendValue(evt.key, evt.newValue);
 
 function sendValue(key, val) {
-  if (val) {
+  if (key === "theme") {
+    sendSettingData({
+      key,
+      value: val
+    });
+  } else if (val) {
     sendSettingData({
       key,
       value: JSON.parse(val).values[0].value

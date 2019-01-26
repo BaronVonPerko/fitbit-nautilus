@@ -28,8 +28,6 @@ let elementIds = [
 ];
 let elements = {};
 
-let currentTheme = "blue";
-
 function getSettings() {
   try {
     return fs.readFileSync(filename, "json").settings;
@@ -39,7 +37,8 @@ function getSettings() {
       topLeft: null,
       topRight: null,
       bottomLeft: null,
-      bottomRight: null
+      bottomRight: null,
+      theme: "blue"
     };
   }
 }
@@ -56,6 +55,8 @@ elementIds.forEach(element => {
 });
 
 function setupColors() {
+  const currentTheme = settings.theme.replace(/"/g, "");
+
   elements.clock.style.fill = themes[currentTheme].main;
   elements.topLeftText.style.fill = themes[currentTheme].main;
   elements.topLeftArc.style.fill = themes[currentTheme].main;
@@ -83,27 +84,30 @@ messaging.peerSocket.onmessage = function(evt) {
   settings[evt.data.key] = evt.data.value;
   saveSettings(settings);
   loadStats();
+  setupColors();
 };
 
 function loadStats() {
-  Object.keys(settings).forEach(key => {
-    if (!settings[key]) {
-      elements[`${key}ArcBG`].style.opacity = 0;
-      elements[`${key}Arc`].style.opacity = 0;
-      elements[`${key}Text`].style.opacity = 0;
-    } else {
-      elements[`${key}ArcBG`].style.opacity = 0.6;
-      elements[`${key}Arc`].style.opacity = 0.6;
-      elements[`${key}Text`].style.opacity = 0.6;
+  Object.keys(settings)
+    .filter(key => key !== "theme")
+    .forEach(key => {
+      if (!settings[key]) {
+        elements[`${key}ArcBG`].style.opacity = 0;
+        elements[`${key}Arc`].style.opacity = 0;
+        elements[`${key}Text`].style.opacity = 0;
+      } else {
+        elements[`${key}ArcBG`].style.opacity = 0.6;
+        elements[`${key}Arc`].style.opacity = 0.6;
+        elements[`${key}Text`].style.opacity = 0.6;
 
-      let values = stats[settings[key]]();
-      if (values.sweepAngle > 360) values.sweepAngle = 360;
-      if (!values.sweepAngle) values.sweepAngle = 0;
+        let values = stats[settings[key]]();
+        if (values.sweepAngle > 360) values.sweepAngle = 360;
+        if (!values.sweepAngle) values.sweepAngle = 0;
 
-      elements[`${key}Text`].text = values.text;
-      elements[`${key}Arc`].sweepAngle = values.sweepAngle;
-    }
-  });
+        elements[`${key}Text`].text = values.text;
+        elements[`${key}Arc`].sweepAngle = values.sweepAngle;
+      }
+    });
 }
 
 function setupClock() {

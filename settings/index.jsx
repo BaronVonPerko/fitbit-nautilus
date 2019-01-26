@@ -4,7 +4,19 @@ function mySettings(props) {
       <Section
         title={
           <Text bold align="center">
-            Nautilus Settings
+            Theme Settings
+          </Text>
+        }
+      >
+        <ColorSelect
+          settingsKey="theme"
+          colors={[{ color: "blue" }, { color: "red" }]}
+        />
+      </Section>
+      <Section
+        title={
+          <Text bold align="center">
+            Metric Settings
           </Text>
         }
       >
