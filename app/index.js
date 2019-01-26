@@ -27,10 +27,10 @@ let elements = {};
 let currentTheme = "blue";
 
 let settings = {
-  topLeft: "getSteps",
-  topRight: "getPower",
-  bottomLeft: "getCalories",
-  bottomRight: "getFloors"
+  topLeft: null,
+  topRight: null,
+  bottomLeft: null,
+  bottomRight: null
 };
 
 elementIds.forEach(element => {
